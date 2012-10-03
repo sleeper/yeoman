@@ -16,7 +16,11 @@ describe('usemin', function() {
   describe('replace helper', function() {
     it("should take into account path", function() {
       usemin.call(grunt,grunt);
-      content = grunt.file.read("./fixtures/usemin.html");
+      grunt.file.mkdir('.test/images');
+      grunt.file.mkdir('.test/images/misc');
+      grunt.file.write('.test/images/23012.test.png', "foo");
+      grunt.file.write('.test/images/misc/2a436.test.png', "foo");
+      var content = grunt.file.read(path.join(__dirname,"fixtures/usemin.html"));
       grunt.helper('replace',content, /<img[^\>]+src=['"]([^"']+)["']/gm);
     });
   });

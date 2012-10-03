@@ -367,7 +367,7 @@ module.exports = function(grunt) {
       // of cached files (we need to treat the filename collision -- i.e. 2 files with same names
       // in different subdirectories)
       var filepaths = grunt.file.expand(path.join('**/*') + basename);
-      var filepath = filepaths.filter(function(f) { return(dirname == path.dirname(f));});
+      var filepath = filepaths.filter(function(f) { return dirname === path.dirname(f);})[0];
 
       // not a file in temp, skip it
       if ( !filepath ) {
