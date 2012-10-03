@@ -16,7 +16,8 @@ describe('usemin', function() {
   describe('replace helper', function() {
     it("should take into account path", function() {
       usemin.call(grunt,grunt);
-      grunt.helper('replace',"foo bar baz", /foo/);
+      content = grunt.file.read("./fixtures/usemin.html");
+      grunt.helper('replace',content, /<img[^\>]+src=['"]([^"']+)["']/gm);
     });
   });
 });
