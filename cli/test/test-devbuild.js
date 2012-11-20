@@ -46,7 +46,7 @@ describe('yeoman devbuild', function() {
     });
 
     it("should create a devbuild directory", function(done) {
-      fs.stat('app/', done);
+      fs.stat('devbuild/', done);
     });
   });
 });
